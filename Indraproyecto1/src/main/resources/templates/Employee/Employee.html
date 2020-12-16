@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Human Resources | Empleados</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/bootstrap/css/jumbotron.css}" rel="stylesheet">
+    <link th:href="@{/bootstrap/css/sticky-footer-navbar.css}" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+    <nav  th:fragment="menu-country" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+   		<a class="navbar-brand" th:href="@{/home}">HR</a>
+   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      		<span class="navbar-toggler-icon"></span>
+    	</button>
+      	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        	<ul class="navbar-nav mr-auto">   
+         	</ul>  
+          	<a class="btn btn-primary" href="#">Ingresar</a>&nbsp;
+          	<a class="btn btn-primary" href="#">Registrarse</a>
+      	</div>
+	</nav>
+    </header>  
+
+    <main role="main">     
+      <hr>
+      <div class="container"> 
+
+        <div class="card">
+          <h4 class="card-header"><strong>Listado de empleados</strong></h4>              
+          <div class="card-body">
+            <a class="btn btn-primary" th:href="@{/home/employee/crear}" title="Crear nuevo empleado" role="button"><i class="fas fa-file" aria-hidden="true"></i> Nueva</a>            
+            <hr>
+            <table class="table table-hover">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Employee ID</th>
+                  <th scope="col">First Name</th>                  
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Phone number</th>
+                  <th scope="col">Operaciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr th:each="Tmpemp:${employee}">
+                  <td th:text="${Tmpemp.employeeid}"></td>
+                  <td th:text="${Tmpemp.firstname}"></td>                  
+                  <td th:text="${Tmpemp.lastname}"></td>
+                  <td th:text="${Tmpemp.Email}"></td>
+                  <td th:text="${Tmpemp.phonenumber}"></td>
+                  <td>
+                  	<a th:href="@{/home/employee/ver/{id} (id=${Tmpemp.employeeid})}" class="btn btn-success btn-sm" role="button" title="Revisar Registro."><i class="fa fa-check-square" aria-hidden="true"></i></a>
+                    <a th:href="@{/home/employee/actualizar/{id} (id=${Tmpemp.employeeid})}" class="btn btn-success btn-sm" role="button" title="Editar el registro."><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+                    <a th:href="@{/home/employee/borrar/{id} (id=${Tmpemp.employeeid})}" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar el registro."><i class="fas fa-trash" aria-hidden="true"></i></a>
+                  </td>
+                </tr>         
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div> <!-- /container -->
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2020 Human Resources, Inc. | WebApp Desarrollada con Spring Boot | Autor: Augusto Ohtokani | &middot; <a href="#">Privacy</a>
+          &middot; <a href="#">Terms</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>     
+  </body>
+</html>

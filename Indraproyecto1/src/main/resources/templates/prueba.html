@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/mostrar}" method="post">
+		<select class="form-control" name="valor" id="valor">
+      		<option th:each="tmp:${prueba}" th:value="${tmp.regionid}" th:text="${tmp.regionid}"></option>
+    	</select>
+		<button type="submit" title="Prueba" class="btn btn-primary">mostrar</button>
+	</form>
+</body>
+</html>

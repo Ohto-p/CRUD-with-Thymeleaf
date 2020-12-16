@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>EmpleosApp | Formulario de Registro</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/bootstrap/css/jumbotron.css}" rel="stylesheet">
+    <link th:href="@{/bootstrap/css/sticky-footer-navbar.css}" rel="stylesheet">
+  </head>
+
+  <body>
+    <header >
+    <nav  th:fragment="menu-country" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+   		<a class="navbar-brand" href="#">HR</a>
+   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      		<span class="navbar-toggler-icon"></span>
+    	</button>
+      	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        	<ul class="navbar-nav mr-auto">   
+         	</ul>  
+          	<a class="btn btn-primary" href="#">Ingresar</a>&nbsp;
+          	<a class="btn btn-primary" href="#">Registrarse</a>
+      	</div>
+	</nav>
+    </header>
+    <main role="main">     
+      <hr>
+      <div class="container"> 
+
+        <div class="card">
+          <h4 class="card-header"><strong>Formulario de registro de Empleado</strong></h4>              
+          <div class="card-body">
+            <form th:action="@{/home/employee/add}" method="post">              
+              <div class="row">
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="nombre">Codigo de empleado</label>
+                    <input type="text" class="form-control" id="employeeid" name="employeeid" placeholder="Ejemplo: 100" required="required">
+                  </div>
+                </div>
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="email">First name</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" required="required">
+                  </div> 
+                </div>    
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="username">Last name</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" required="required">
+                  </div>
+                </div>
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="username">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="AOPANIAGUA" required="required">
+                  </div>
+                </div>
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="username">Phone number</label>
+                    <input type="text" class="form-control" id="phonenumber" name="phonenumber" placeholder="543.134.4567" required="required">
+                  </div>
+                </div>
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="fecha">Hire Date</label>
+                    <input type="text" class="form-control" th:name="hiredate" th:id="hiredate" required="required"  th:value="${#calendars.format(dateOfBirth,'dd-mm-yyyy')}">
+                  </div>  
+                </div>
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="username">Job ID</label>
+                    <input type="text" class="form-control" id="JobId" name="JobId" placeholder="ejemplo: AD_PRES " required="required">
+                  </div>
+                </div>
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="username">Salary</label>
+                    <input type="text" class="form-control" id="salary" name="salary" placeholder="ej. 24000.0" required="required">
+                  </div>
+                </div>
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="username">Commission PCT</label>
+                    <input type="text" class="form-control" id="commissionpct" name="commissionpct" placeholder="ej. 0.2" required="required">
+                  </div>
+                </div>
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="username">Manager ID</label>
+                    <input type="text" class="form-control" id="managerid" name="managerid" placeholder="ej. 100" required="required">
+                  </div>
+                </div>
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="username">Department ID</label>
+                    <input type="text" class="form-control" id="departmentid" name="departmentid" placeholder="ej. 80" required="required">
+                  </div>
+                </div>
+              </div>                  
+              <hr>
+              <button type="submit" title="Guardar datos del pais" class="btn btn-primary">Guardar</button>  
+            </form>
+          </div>
+        </div>
+      </div> <!-- /container -->
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2019 EmpleosApp, Inc. | WebApp Desarrollada con Spring Boot 2.1.2 | Autor: Iv&aacute;n E. Tinajero D&iacute;az | &middot; <a href="#">Privacy</a>
+          &middot; <a href="#">Terms</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>      
+  </body>
+</html>

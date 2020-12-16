@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Human Resources</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/bootstrap/css/jumbotron.css}" rel="stylesheet">
+    <link th:href="@{/bootstrap/css/sticky-footer-navbar.css}" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <nav  th:fragment="menu-country" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+   		<a class="navbar-brand" th:href="@{/home}">HR</a>
+   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      		<span class="navbar-toggler-icon"></span>
+    	</button>
+      	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        	<ul class="navbar-nav mr-auto">   
+         	</ul>  
+          	<a class="btn btn-primary" href="#">Ingresar</a>&nbsp;
+          	<a class="btn btn-primary" href="#">Registrarse</a>
+      	</div>
+	</nav>
+    </header>
+  <main role="main" align ="center"> 
+	  <h1>Home</h1>  
+	  <h2>todas las dependencias de las tablas</h2>
+	  <a class="btn btn-primary" th:href="@{/home/country/ver}">Country</a>
+	  <a class="btn btn-primary" th:href="@{/home/department/ver}">Department</a>
+	  <a class="btn btn-primary" th:href="@{/home/employee/ver}">Employee</a>
+	  <a class="btn btn-primary" th:href="@{/home/jobhistory/ver}">JobHistory</a> 
+	  <a class="btn btn-primary" th:href="@{/home/jobs/ver}">Jobs</a>
+	  <a class="btn btn-primary" th:href="@{/home/location/ver}">Location</a>
+	  <a class="btn btn-primary" th:href="@{/home/region/ver}">Region</a> 
+	  <a th:href="@{/prueba}" class="btn btn-secondary">Pruebas</a>
+   </main>
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2020 Human Resources, Inc. | WebApp Desarrollada con Spring Boot | Autor: Augusto Ohtokani | &middot; <a href="#">Privacy</a>
+          &middot; <a href="#">Terms</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script> 
+</body>
+</html>

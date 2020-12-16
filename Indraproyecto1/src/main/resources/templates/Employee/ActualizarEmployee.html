@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>EmpleosApp | Formulario de Registro</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/bootstrap/css/jumbotron.css}" rel="stylesheet">
+    <link th:href="@{/bootstrap/css/sticky-footer-navbar.css}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header >
+      <nav  th:fragment="menu-country" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+   		<a class="navbar-brand" th:href="@{/home}">HR</a>
+   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      		<span class="navbar-toggler-icon"></span>
+    	</button>
+      	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        	<ul class="navbar-nav mr-auto">   
+         	</ul>  
+          	<a class="btn btn-primary" href="#">Ingresar</a>&nbsp;
+          	<a class="btn btn-primary" href="#">Registrarse</a>
+      	</div>
+	</nav>
+   </header>
+    <main role="main">     
+      <hr>
+      <div class="container"> 
+        <div class="card">
+          <h4 class="card-header"><strong>Actualizar registro de empleado</strong></h4>              
+          <div class="card-body">
+            <form th:action="@{/home/employee/update}" method="post">            
+              <div class="row">
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="codigopais">Codigo de empleado</label>
+                    <p style="Text-align:center;" th:text="${empleado.get().getEmployeeid()}"></p>
+                  	<label for="nombrepais">First name</label>
+                    <p style="Text-align:center;" th:text="${empleado.get().getFirstname()}"></p>
+                  	<label for="numeroregion">Last name</label>
+                    <p style="Text-align:center;" th:text="${empleado.get().getLastname()}"></p>
+                    <label for="numeroregion">Email</label>
+                    <p style="Text-align:center;" th:text="${empleado.get().getEmail()}"></p>
+                    <label for="numeroregion">Phonenumber</label>
+                    <p style="Text-align:center;" th:text="${empleado.get().getPhonenumber()}"></p>
+                    <label for="numeroregion">Hiredate</label>
+                    <p style="Text-align:center;" th:text="${empleado.get().getHiredate()}"></p>
+                    <label for="numeroregion">JobId</label>
+                    <p style="Text-align:center;" th:text="${empleado.get().getJobId()}"></p>
+                    <label for="numeroregion">Salary</label>
+                    <p style="Text-align:center;" th:text="${empleado.get().getSalary()}"></p>
+                  	<label for="numeroregion">Commission PCT</label>
+                    <p style="Text-align:center;" th:text="${empleado.get().getCommissionpct()}"></p>
+                  	<label for="numeroregion">Manager Id</label>
+                    <p style="Text-align:center;" th:text="${empleado.get().getManagerid()}"></p>
+                  	<label for="numeroregion">Deparment Id</label>
+                    <p style="Text-align:center;" th:text="${empleado.get().getDepartmentid()}"></p>
+                  </div>
+                </div>
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="employeeid">Nuevo codigo de empleado</label>
+                    <input type="text" class="form-control" id="employeeid" name="employeeid" placeholder="ej. 207" required="required">
+                  	<label for="firstname">Nuevo first name</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" required="required">
+                  	<label for="lastname">Nuevo last name</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname"  required="required">
+                    <label for="email">Nuevo email</label>
+                    <input type="text" class="form-control" id="email" name="email"  required="required">
+                    <label for="phonenumber">Nuevo  phonenumber</label>
+                    <input type="text" class="form-control" id="phonenumber" name="phonenumber" placeholder="ej, 234.123.1234" required="required">
+                    <label for="hiredate">Nuevo hiredate</label>
+                    <input type="text" class="form-control" id="hiredate" name="hiredate" placeholder="ej. 19/09/2020" required="required">
+                  	<label for="jobid">Nuevo job id</label>
+                    <input type="text" class="form-control" id="JobId" name="JobId" placeholder="ej. AD_PRES" required="required">
+                  	<label for="salary">Nuevo salary</label>
+                    <input type="text" class="form-control" id="salary" name="salary" placeholder="ej. 40000.0" required="required">
+                 	<label for="commissionpct">Nuevo commission pct</label>
+                    <input type="text" class="form-control" id="commissionpct" name="commissionpct" placeholder="ej. 0.2" required="required">
+                  	<label for="managerid">Nuevo manager id</label>
+                    <input type="text" class="form-control" id="managerid" name="managerid" required="required">
+                  	<label for="departmentid">Nuevo department id</label>
+                    <input type="text" class="form-control" id="departmentid" name="departmentid" placeholder="departmentid" required="required">
+                  </div> 
+                </div>    
+              </div>                  
+              <hr>
+              <button type="submit" title="Guardar datos del empleado" class="btn btn-primary">Actualizar</button>  
+            </form>
+          </div>
+        </div>
+      </div> <!-- /container -->
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2019 EmpleosApp, Inc. | WebApp Desarrollada con Spring Boot 2.1.2 | Autor: Iv&aacute;n E. Tinajero D&iacute;az | &middot; <a href="#">Privacy</a>
+          &middot; <a href="#">Terms</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>     
+  </body>
+</html>

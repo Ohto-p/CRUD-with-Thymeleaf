@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <h1 th:text="${empleado.get().getEmployeeid()}"></h1>
+ <h1 th:text="${empleado.get().getFirstname()}"></h1>
+ <h1 th:text="${empleado.get().getLastname()}"></h1>
+ <h1 th:text="${empleado.get().getEmail()}"></h1>
+ <h1 th:text="${empleado.get().getPhonenumber()}"></h1>
+ <h1 th:text="${empleado.get().getHiredate()}"></h1>
+ <h1 th:text="${empleado.get().getJobId()}"></h1>
+ <h1 th:text="${empleado.get().getSalary()}"></h1>
+ <h1 th:text="${empleado.get().getCommissionpct()}"></h1>
+ <h1 th:text="${empleado.get().getManagerid()}"></h1>
+ <h1 th:text="${empleado.get().getDepartmentid()}"></h1>
+ 
+</body>
+</html>
