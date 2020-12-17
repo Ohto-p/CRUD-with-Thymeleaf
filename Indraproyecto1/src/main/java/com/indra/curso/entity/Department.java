@@ -3,6 +3,8 @@ package com.indra.curso.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,8 +20,9 @@ public class Department {
 	@Column(name="manager_id")
 	private Integer managerid;
 		
-	@Column(name="location_id")
-	private Integer locationid;
+	@OneToOne
+	@JoinColumn(name="location_id")
+	private Location location;
 		
 	//Getter and Setters
 	public Integer getDepartmentid() {
@@ -46,33 +49,32 @@ public class Department {
 		this.managerid = managerid;
 	}
 		
-	public Integer getLocationid() {
-		return locationid;
+	public Location getLocation() {
+		return location;
 	}
-		
-	public void setLocationid(Integer locationid) {
-		this.locationid = locationid;
+
+	public void setLocation(Location location) {
+		this.location = location;
 	}
-		
+
 	//Constructor vacio
 	public Department() {}
-	
+
 	//Constructor de inicializacion
-	public Department(Integer departmentid, String departmentname, Integer managerid, Integer locationid) {
+	public Department(Integer departmentid, String departmentname, Integer managerid, Location location) {
 		super();
 		this.departmentid = departmentid;
 		this.departmentname = departmentname;
 		this.managerid = managerid;
-		this.locationid = locationid;
+		this.location = location;
 	}
 	
 	//toString()
 	@Override
 	public String toString() {
 		return "Department [departmentid=" + departmentid + ", departmentname=" + departmentname + ", managerid="
-				+ managerid + ", locationid=" + locationid + "]";
+				+ managerid + ", location=" + location + "]";
 	}
-	
 	
 	
 }

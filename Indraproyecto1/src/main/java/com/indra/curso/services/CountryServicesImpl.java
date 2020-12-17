@@ -41,16 +41,12 @@ public class CountryServicesImpl implements CountryServices {
 
 	@Override
 	public String updateCountry(Country countryupdate) {
-		String code = countryupdate.getCountryid();
-		if(countryRepository.findById(code).isPresent()) {
-			Country countryToUpdate = new Country();
-			countryToUpdate.setCountryid(countryupdate.getCountryid());
-			countryToUpdate.setCountryname(countryupdate.getCountryname());
-			countryToUpdate.setRegionid(countryupdate.getRegionid());
-			countryRepository.save(countryToUpdate);
-			return "1";
+		String id = countryupdate.getCountryid();
+		if(countryRepository.findById(id).isPresent()){
+			countryRepository.save(countryupdate);
+			return "Pais actualizado correctamente!";
 		}
-		return "0";
+		return "Error al actualizar el pais";
 	}
 
 	

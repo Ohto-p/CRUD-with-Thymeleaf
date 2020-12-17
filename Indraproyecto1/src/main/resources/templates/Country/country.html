@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <header>
+   <header>
     <nav  th:fragment="menu-country" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
    		<a class="navbar-brand" th:href="@{/home}">HR</a>
    		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
           	<a class="btn btn-primary" href="#">Registrarse</a>
       	</div>
 	</nav>
-    </header>  
+    </header>
 
     <main role="main">     
       <hr>
@@ -56,7 +56,7 @@
                 <tr th:each="Tmppais:${paises}">
                   <td th:text="${Tmppais.countryid}">1</td>
                   <td th:text="${Tmppais.countryname}">Mexico</td>                  
-                  <td th:text="${Tmppais.regionid}">AM</td>
+                  <td th:text="${Tmppais.region.regionid}">AM</td>
                   <td>
                     <a th:href="@{/home/country/actualizar/{id} (id =${Tmppais.countryid})}" class="btn btn-success btn-sm" role="button" title="Editar el registro."><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                     <a th:href="@{/home/country/borrar/{id} (id =${Tmppais.countryid})}" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar el registro."><i class="fas fa-trash" aria-hidden="true"></i></a>

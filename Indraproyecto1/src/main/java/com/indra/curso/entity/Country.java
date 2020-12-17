@@ -2,8 +2,9 @@ package com.indra.curso.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 
 import org.springframework.lang.NonNull;
 
@@ -18,9 +19,9 @@ public class Country {
 	@Column(name="country_name")
 	private String countryname;
 	
-	@NonNull
-	@Column(name="region_id")
-	private String regionid;
+	@OneToOne
+	@JoinColumn(name="region_id")
+	private Region region;
 	
 	//Getters and Setter
 	public String getCountryid() {
@@ -38,30 +39,29 @@ public class Country {
 	public void setCountryname(String countryname) {
 		this.countryname = countryname;
 	}
-
-	public String getRegionid() {
-		return regionid;
-	}
-
-	public void setRegionid(String regionid) {
-		this.regionid = regionid;
-	}
 	
+	public Region getRegion() {
+		return region;
+	}
+
+	public void setRegion(Region region) {
+		this.region = region;
+	}
+
 	//Constructor vacio
 	public Country () {}
 	
 	//Constructor con campos 
-	public Country(String countryid, String countryname, String regionid) {
+	public Country(String countryid, String countryname, Region region) {
 		super();
 		this.countryid = countryid;
 		this.countryname = countryname;
-		this.regionid = regionid;
+		this.region = region;
 	}
-
+	
 	//To string
 	@Override
 	public String toString() {
-		return "Country [countryid=" + countryid + ", countryname=" + countryname + ", regionid=" + regionid + "]";
+		return "Country [countryid=" + countryid + ", countryname=" + countryname + ", region=" + region + "]";
 	}
-	
 }

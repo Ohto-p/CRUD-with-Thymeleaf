@@ -17,8 +17,8 @@
 
   <body>
 
-    <header >
-      <nav  th:fragment="menu-country" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <header>
+    <nav  th:fragment="menu-country" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
    		<a class="navbar-brand" th:href="@{/home}">HR</a>
    		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
@@ -30,7 +30,7 @@
           	<a class="btn btn-primary" href="#">Registrarse</a>
       	</div>
 	</nav>
-   </header>
+    </header>
     <main role="main">     
       <hr>
       <div class="container"> 
@@ -45,22 +45,22 @@
                     <p style="Text-align:center;" th:text="${department.get().getDepartmentid()}"></p>
                   	<label for="nombrepais">Nombre del departamento</label>
                     <p style="Text-align:center;" th:text="${department.get().getDepartmentname()}"></p>
-                  	<label for="numeroregion">Numero de manager</label>
-                    <p style="Text-align:center;" th:text="${department.get().getManagerid()}"></p>
+                  	<label for="numeroregion" >Numero de manager</label>
+                    <p style="Text-align:center;" th:text="${department.get().getManagerid() == null} ? 'No encontrado': ${department.get().getManagerid()}"></p>
                     <label for="numeroregion">Numero de locacion</label>
-                    <p style="Text-align:center;" th:text="${department.get().getLocationid()}"></p>
+                    <p style="Text-align:center;" th:text="${department.get().location.getLocationid()}"></p>
                   </div>
                 </div>
                 <div class="col-md-3"> 
                   <div class="form-group">
                     <label for="codigopais">Codigo de departamento</label>
-                    <input type="text" class="form-control" id="departmentid" name="departmentid" placeholder="Ejemplo: 290" required="required">
+                    <input type="text" class="form-control" id="departmentid" name="departmentid" placeholder="Ejemplo: 290" required="required" th:value="${department.get().getDepartmentid()}">
                   	<label for="nombrepais">Nuevo nombre del departamento</label>
                     <input type="text" class="form-control" id="departmentname" name="departmentname" placeholder="Nombre del departamento" required="required">
                   	<label for="numeroregion">Nuevo numero de manager</label>
-                    <input type="text" class="form-control" id="managerid" name="managerid" placeholder="numero de manager" required="required">
-                    <label for="numeroregion">Nuevo numero de locacion </label>
-                    <input type="text" class="form-control" id="Locationid" name="Locationid" placeholder="numero de locacion" required="required">
+                    <input type="text" class="form-control" id="managerid" name="managerid" placeholder="numero de manager" required="required" >
+                    <label for="location.locationid">Nuevo numero de locacion </label>
+                    <input type="text" class="form-control" id="location.locationid" name="location.locationid" placeholder="numero de locacion" required="required">
                   </div> 
                 </div>    
               </div>                  

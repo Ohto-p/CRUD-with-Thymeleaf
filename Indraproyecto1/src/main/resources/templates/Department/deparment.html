@@ -30,7 +30,7 @@
           	<a class="btn btn-primary" href="#">Registrarse</a>
       	</div>
 	</nav>
-    </header>  
+    </header>
 
     <main role="main">     
       <hr>
@@ -56,7 +56,7 @@
                   <td th:text="${Tmpdprt.departmentid}">1</td>
                   <td th:text="${Tmpdprt.departmentname}">Mexico</td>                  
                   <td th:text="${Tmpdprt.managerid}">AM</td>
-                  <td th:text="${Tmpdprt.locationid}">AM</td>
+                  <td th:text="${Tmpdprt.location.locationid}">AM</td>
                   <td>
                     <a th:href="@{/home/department/actualizar/{id} (id=${Tmpdprt.departmentid})}" class="btn btn-success btn-sm" role="button" title="Editar el registro."><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                     <a th:href="@{/home/department/borrar/{id} (id=${Tmpdprt.departmentid})}" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar el registro."><i class="fas fa-trash" aria-hidden="true"></i></a>

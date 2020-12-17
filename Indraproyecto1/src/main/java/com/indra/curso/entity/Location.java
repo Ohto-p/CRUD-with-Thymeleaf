@@ -3,6 +3,8 @@ package com.indra.curso.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -10,22 +12,23 @@ import javax.persistence.Table;
 public class Location {
 	@Id
 	@Column(name="location_id")
-	Integer locationid;
+	private Integer locationid;
 	
 	@Column(name="street_address")
-	String streetaddress;
+	private String streetaddress;
 	
 	@Column(name="postal_code")
-	String postalcode;
+	private String postalcode;
 	
 	@Column(name="city")
-	String city;
+	private String city;
 	
 	@Column(name="state_province")
-	String stateprovince;
+	private String stateprovince;
 	
-	@Column(name="country_id")
-	String countryid;
+	@OneToOne
+	@JoinColumn(name="country_id")
+	private Country country;
 
 	//Getters and Setters
 	public Integer getLocationid() {
@@ -67,36 +70,42 @@ public class Location {
 	public void setStateprovince(String stateprovince) {
 		this.stateprovince = stateprovince;
 	}
-
-	public String getCountryid() {
-		return countryid;
-	}
-
-	public void setCountryid(String countryid) {
-		this.countryid = countryid;
-	}
 	
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		this.country = country;
+	}
+
 	//Constructor Vacio
 	public Location() {}
-
+	
 	//Constructor con campos
 	public Location(Integer locationid, String streetaddress, String postalcode, String city, String stateprovince,
-			String countryid) {
+			Country country) {
 		super();
 		this.locationid = locationid;
 		this.streetaddress = streetaddress;
 		this.postalcode = postalcode;
 		this.city = city;
 		this.stateprovince = stateprovince;
-		this.countryid = countryid;
+		this.country = country;
 	}
-
+	
 	//To String 
 	@Override
 	public String toString() {
 		return "Location [locationid=" + locationid + ", streetaddress=" + streetaddress + ", postalcode=" + postalcode
-				+ ", city=" + city + ", stateprovince=" + stateprovince + ", countryid=" + countryid + "]";
+				+ ", city=" + city + ", stateprovince=" + stateprovince + ", country=" + country + "]";
 	}
+
+	
+	
+
+	
+
 	
 	
 	

@@ -17,8 +17,8 @@
 
   <body>
 
-    <header >
-      <nav  th:fragment="menu-country" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+   <header>
+    <nav  th:fragment="menu-country" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
    		<a class="navbar-brand" th:href="@{/home}">HR</a>
    		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
@@ -30,7 +30,7 @@
           	<a class="btn btn-primary" href="#">Registrarse</a>
       	</div>
 	</nav>
-   </header>
+    </header>
     <main role="main">     
       <hr>
       <div class="container"> 
@@ -52,7 +52,7 @@
                     <label for="stateprovince">Estado</label>
                     <p style="Text-align:center;" th:text="${location.get().getStateprovince()}"></p>
                     <label for="countryid">Id pais</label>
-                    <p style="Text-align:center;" th:text="${location.get().getCountryid()}"></p>
+                    <p style="Text-align:center;" th:text="${location.get().country.getCountryid()}"></p>
                   </div>
                 </div>
                 <div class="col-md-3"> 
@@ -67,8 +67,8 @@
                     <input type="text" class="form-control" id="city" name="city"  required="required">
                   	<label for="stateprovince">Nuevo nombre de estado</label>
                     <input type="text" class="form-control" id="estateprovince" name="stateprovince"  required="required">
-                 	<label for="countryid">Nuevo Id pais</label>
-                    <input type="text" class="form-control" id="countryid" name="countryid" placeholder="ej. MX" required="required">
+                 	<label for="country.countryid">Nuevo Id pais</label>
+                    <input type="text" class="form-control" id="country.countryid" name="country.countryid" placeholder="ej. MX" required="required">
                   </div> 
                 </div>    
               </div>                  

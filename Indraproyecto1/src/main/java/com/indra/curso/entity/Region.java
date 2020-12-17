@@ -8,12 +8,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name="regions")
 public class Region {
+	
 	@Id
 	@Column(name="region_id")
-	Integer regionid;
+	private Integer regionid;
 	
 	@Column(name="region_name")
-	String regionname;
+	private String regionname;
 	
 	//Getters and Setters
 	public Integer getRegionid() {

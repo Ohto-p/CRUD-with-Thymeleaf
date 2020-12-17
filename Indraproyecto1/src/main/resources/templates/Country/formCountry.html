@@ -16,9 +16,9 @@
   </head>
 
   <body>
-    <header >
+    <header>
     <nav  th:fragment="menu-country" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-   		<a class="navbar-brand" href="#">HR</a>
+   		<a class="navbar-brand" th:href="@{/home}">HR</a>
    		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
     	</button>
@@ -41,20 +41,20 @@
               <div class="row">
                 <div class="col-md-3"> 
                   <div class="form-group">
-                    <label for="nombre">Codigo de pais</label>
+                    <label for="countryid">Codigo de pais</label>
                     <input type="text" class="form-control" id="countryid" name="countryid" placeholder="Ejemplo: MX" required="required">
                   </div>
                 </div>
                 <div class="col-md-3"> 
                   <div class="form-group">
-                    <label for="email">Nombre del pais</label>
+                    <label for="countryname">Nombre del pais</label>
                     <input type="text" class="form-control" id="countryname" name="countryname" placeholder="Nombre del pais" required="required">
                   </div> 
                 </div>    
                 <div class="col-md-3"> 
                   <div class="form-group">
-                    <label for="username">numero de region</label>
-                    <input type="text" class="form-control" id="regionid" name="regionid" placeholder="numero de region" required="required">
+                    <label for="region">numero de region</label>
+                    <input type="text" class="form-control" id="region.regionid" name="region.regionid" placeholder="numero de region" required="required">
                   </div>
                 </div>
               </div>                  

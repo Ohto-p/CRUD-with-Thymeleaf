@@ -16,9 +16,9 @@
   </head>
 
   <body>
-    <header >
+    <header>
     <nav  th:fragment="menu-country" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-   		<a class="navbar-brand" href="#">HR</a>
+   		<a class="navbar-brand" th:href="@{/home}">HR</a>
    		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
     	</button>
@@ -77,8 +77,8 @@
                 </div>
                 <div class="col-md-3"> 
                   <div class="form-group">
-                    <label for="username">Job ID</label>
-                    <input type="text" class="form-control" id="JobId" name="JobId" placeholder="ejemplo: AD_PRES " required="required">
+                    <label for="job.jobid">Job ID</label>
+                    <input type="text" class="form-control" id="job.jobid" name="job.jobid" placeholder="ejemplo: AD_PRES " required="required">
                   </div>
                 </div>
                 <div class="col-md-3"> 
@@ -101,8 +101,8 @@
                 </div>
                 <div class="col-md-3"> 
                   <div class="form-group">
-                    <label for="username">Department ID</label>
-                    <input type="text" class="form-control" id="departmentid" name="departmentid" placeholder="ej. 80" required="required">
+                    <label for="department.departmentid">Department ID</label>
+                    <input type="text" class="form-control" id="department.departmentid" name="department.departmentid" placeholder="ej. 80" required="required">
                   </div>
                 </div>
               </div>                  

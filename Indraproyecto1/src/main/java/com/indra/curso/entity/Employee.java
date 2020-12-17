@@ -3,6 +3,8 @@ package com.indra.curso.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -28,8 +30,9 @@ public class Employee {
 	@Column(name="HIRE_DATE")
 	private String hiredate;
 	
-	@Column(name="JOB_ID")
-	private String JobId;
+	@OneToOne
+	@JoinColumn(name="JOB_ID")
+	private Jobs job;
 	
 	@Column(name="SALARY")
 	private float Salary;
@@ -40,15 +43,16 @@ public class Employee {
 	@Column(name="MANAGER_ID")
 	private String managerid ;
 	
-	@Column(name="DEPARTMENT_ID")
-	private String departmentid;
+	@OneToOne
+	@JoinColumn(name="DEPARTMENT_ID")
+	private Department department;
 
 	//Constructor vacio
      public Employee(){}
     
     //Constructor 
-     public Employee(Integer employeeid, String firstname, String lastname, String email, String phonenumber, String hiredate,
- 			String jobId, float salary, String commissionpct, String managerid, String departmentid) {
+ 	public Employee(Integer employeeid, String firstname, String lastname, String email, String phonenumber,
+ 			String hiredate, Jobs job, float salary, String commissionpct, String managerid, Department department) {
  		super();
  		this.employeeid = employeeid;
  		this.firstname = firstname;
@@ -56,11 +60,11 @@ public class Employee {
  		Email = email;
  		this.phonenumber = phonenumber;
  		this.hiredate = hiredate;
- 		JobId = jobId;
+ 		this.job = job;
  		Salary = salary;
  		this.commissionpct = commissionpct;
  		this.managerid = managerid;
- 		this.departmentid = departmentid;
+ 		this.department = department;
  	}
 
      
@@ -68,8 +72,8 @@ public class Employee {
     public Integer getEmployeeid() {
  		return employeeid;
  	}
-    
-    public void setEmployeeid(Integer employeeid) {
+
+	public void setEmployeeid(Integer employeeid) {
 		this.employeeid = employeeid;
 	}
 
@@ -113,12 +117,12 @@ public class Employee {
 		this.hiredate = hiredate;
 	}
 
-	public String getJobId() {
-		return JobId;
+	public Jobs getJob() {
+		return job;
 	}
 
-	public void setJobId(String jobId) {
-		JobId = jobId;
+	public void setJob(Jobs job) {
+		this.job = job;
 	}
 
 	public float getSalary() {
@@ -144,22 +148,21 @@ public class Employee {
 	public void setManagerid(String managerid) {
 		this.managerid = managerid;
 	}
-
-	public String getDepartmentid() {
-		return departmentid;
+	
+	public Department getDepartment() {
+		return department;
 	}
 
-	public void setDepartmentid(String departmentid) {
-		this.departmentid = departmentid;
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 	
 	//to String
 	@Override
 	public String toString() {
 		return "Employee [employeeid=" + employeeid + ", firstname=" + firstname + ", lastname=" + lastname + ", Email="
-				+ Email + ", phonenumber=" + phonenumber + ", hiredate=" + hiredate + ", JobId=" + JobId + ", Salary="
-				+ Salary + ", commissionpct=" + commissionpct + ", managerid=" + managerid + ", departamentid="
-				+ departmentid + "]";
-	}
-      
+				+ Email + ", phonenumber=" + phonenumber + ", hiredate=" + hiredate + ", job=" + job + ", Salary="
+				+ Salary + ", commissionpct=" + commissionpct + ", managerid=" + managerid + ", department="
+				+ department + "]";
+	}  
 }

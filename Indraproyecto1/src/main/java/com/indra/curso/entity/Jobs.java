@@ -11,16 +11,16 @@ public class Jobs {
 	
 	@Id
 	@Column(name="job_id")
-	String jobid;
+	private String jobid;
 	
 	@Column(name="job_title")
-	String jobtitle;
+	private String jobtitle;
 	
 	@Column(name="min_salary")
-	Integer minsalary;
+	private Integer minsalary;
 	
 	@Column(name="max_salary")
-	Integer maxsalary;
+	private Integer maxsalary;
 	
 	//Getters and Setters
 	public String getJobid() {
